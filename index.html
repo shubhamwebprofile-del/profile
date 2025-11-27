@@ -13,6 +13,97 @@
       font-family: 'Poppins', sans-serif;
       color: #fff;
     }
+    .about-modern {
+  max-width: 750px;
+  margin: 150px auto;
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  position: relative;
+}
+
+/* Small RGB bottom border */
+.about-modern::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #00eaff, #ff00ff, #00ff88);
+  border-radius: 8px;
+  opacity: 0.4;
+  transition: 0.4s ease;
+}
+
+.about-modern:hover::after {
+  width: 90%;
+  opacity: 1;
+}
+
+/* HEADING */
+.about-heading {
+  font-size: 42px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00eaff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* PARAGRAPH */
+.about-desc {
+  margin-top: 20px;
+  color: #d6d6d6;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+/* LINKS FOR PROJECT + CONTACT */
+.about-links {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* MINIMAL NEON BUTTONS */
+.about-link {
+  padding: 10px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.about-link:hover {
+  border-color: #00eaff;
+  color: #00eaff;
+  background: rgba(0, 255, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-modern {
+    padding: 40px 25px;
+  }
+  .about-heading {
+    font-size: 34px;
+  }
+  .about-desc {
+    font-size: 15px;
+  }
+}
+
     .hero_section
     {
         padding-top: 100px;
@@ -212,6 +303,627 @@
     width: 0;
     animation: fillBar 2s forwards;
   }
+   .rgb-contact {
+    background: #050505;
+    color: #fff;
+    padding: 60px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rgb-contact .card {
+    width: 100%;
+    max-width: 980px;
+    padding: 28px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    position: relative;
+    overflow: visible;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* animated RGB glow border */
+  .rgb-contact .card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    z-index: -1;
+    border-radius: 18px;
+    background:
+      conic-gradient(from 120deg, rgba(97,175,239,0.95), rgba(255,0,157,0.95), rgba(140,255,0,0.95), rgba(97,175,239,0.95));
+    filter: blur(18px);
+    opacity: 0.18;
+    transition: opacity .35s, transform .35s;
+  }
+  .rgb-contact .card:hover::before {
+    opacity: 0.95;
+    transform: scale(1.02);
+  }
+
+  .rgb-contact .row {
+    gap: 24px;
+    align-items: center;
+  }
+
+  .rgb-contact h2 {
+    margin: 0 0 6px 0;
+    font-size: 28px;
+    background: linear-gradient(90deg, #61AFEF, #FF009D, #8CFF00);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+  }
+  .rgb-contact p.lead {
+    margin: 0 0 14px 0;
+    color: #cbd5df;
+    opacity: 0.95;
+  }
+
+  /* contact buttons */
+  .contact-links { display:flex; gap:12px; flex-wrap:wrap; }
+  .contact-links a {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-links a i { font-size:18px; opacity:0.95; }
+
+  /* RGB hover glow for each button individually */
+  .contact-links a::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(from 180deg, rgba(97,175,239,0.9), rgba(255,0,157,0.9), rgba(140,255,0,0.9));
+    filter: blur(30px);
+    opacity: 0;
+    transition: opacity .28s, transform .28s;
+    transform: scale(0.9);
+    z-index: -1;
+  }
+  .contact-links a:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px rgba(97,175,239,0.06);
+    border-color: rgba(255,255,255,0.08);
+  }
+  .contact-links a:hover::after { opacity: 0.9; transform: scale(1.05); }
+
+  /* small form on the right */
+  .contact-form {
+    min-width: 260px;
+    max-width: 420px;
+    width: 100%;
+    background: rgba(255,255,255,0.01);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+  .contact-form .form-control {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.04);
+    color: #fff;
+    border-radius: 8px;
+  }
+  .contact-form .form-control::placeholder { color: #9fb0c1; opacity: .6; }
+  .contact-form .form-control:focus {
+    outline: none;
+    box-shadow: 0 6px 30px rgba(97,175,239,0.06);
+    border-color: #61AFEF;
+  }
+  .contact-form .btn-send {
+    width:100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    color: #050505;
+    font-weight:700;
+    background: linear-gradient(90deg,#61AFEF, #FF009D);
+    box-shadow: 0 8px 30px rgba(255,0,157,0.10);
+    transition: transform .18s;
+  }
+  /* HERO MAIN WRAPPER */
+.hero-modern {
+  padding: 120px 50px;
+  margin-top: 50px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+/* RGB bottom line effect */
+.hero-modern::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 3px;
+  background: linear-gradient(90deg, #00eaff, #ff00ff, #00ff88);
+  border-radius: 10px;
+  opacity: 0.45;
+  transition: 0.4s ease;
+}
+.hero-modern:hover::after {
+  width: 90%;
+  opacity: 1;
+}
+
+/* LEFT SIDE TEXT */
+.hero-greet {
+  letter-spacing: 3px;
+  color: #00eaff;
+  font-size: 22px;
+}
+
+.hero-name {
+  font-size: 55px;
+  font-weight: 800;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #00eaff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-para {
+  margin-top: 20px;
+  line-height: 1.7;
+  font-size: 17px;
+  color: #dcdcdc;
+  max-width: 550px;
+}
+
+/* RIGHT SIDE IMAGE BOX */
+.hero-image-wrap {
+  padding: 12px;
+  border-radius: 20px;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top thin RGB border */
+.hero-image-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, #00eaff, #ff00ff, #00ff88);
+  border-radius: 10px;
+  opacity: 0.5;
+  transition: 0.4s ease;
+}
+
+.hero-image-wrap:hover::before {
+  width: 90%;
+  opacity: 1;
+}
+
+.hero-image {
+  width: 85%;
+  border-radius: 15px;
+  transition: 0.4s ease;
+}
+
+/* Image hover effect */
+.hero-image-wrap:hover .hero-image {
+  transform: scale(1.04);
+}
+/* NAVBAR MAIN */
+.modern-nav {
+  padding: 18px 0;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* BRAND TEXT */
+.nav-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #00eaff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent !important;
+}
+
+/* NAV LINKS WRAPPER */
+.nav-links .nav-link {
+  margin-left: 25px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  color: #dcdcdc !important;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* RGB UNDERLINE EFFECT */
+.modern-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00eaff, #ff00ff, #00ff88);
+  transition: 0.4s ease;
+  border-radius: 5px;
+}
+
+.modern-link:hover::after {
+  width: 100%;
+}
+
+.modern-link:hover {
+  color: #ffffff !important;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links .nav-link {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+}
+/* MAIN TITLE */
+#hobbies h1 {
+  font-size: 50px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00eaff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 60px;
+}
+
+/* HOBBY CARD BASE */
+.hobby-card {
+  padding: 35px 25px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* RGB EDGE STRIP */
+.hobby-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #00eaff, #ff00ff, #00ff88);
+  border-radius: 10px;
+  transition: 0.4s ease;
+  opacity: 0.6;
+}
+
+.hobby-card:hover::after {
+  width: 90%;
+  opacity: 1;
+}
+
+/* ICON */
+.hobby-card i {
+  font-size: 75px;
+  background: linear-gradient(90deg, #00eaff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 0.3s;
+}
+
+/* ICON HOVER */
+.hobby-card:hover i {
+  transform: scale(1.1) translateY(-5px);
+}
+
+/* TITLE */
+.hobby-card h4 {
+  margin-top: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+/* PARAGRAPH */
+.hobby-card p {
+  color: #dcdcdc;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* HOVER LIFT EFFECT */
+.hobby-card:hover {
+  transform: translateY(-10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+/* Title */
+.skills-title {
+  font-size: 50px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #00eaff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 40px;
+}
+
+
+/* Skill Card Base */
+.skill-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* RGB Animated Border */
+.skill-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(120deg, #00eaff, #ff00ff, #00ff88);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+}
+
+/* Hover Lift Effect */
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+
+/* Icons */
+.skill-icon i {
+  font-size: 60px;
+  background: linear-gradient(90deg, #00eaff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+  transition: 0.4s ease;
+}
+
+.skill-card:hover .skill-icon i {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Skill Name */
+.skill-card h4 {
+  margin-top: 10px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.edu-section {
+  background: #0c0c0c;
+  color: white;
+}
+
+.edu-section h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+/* TIMELINE WRAPPER */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Vertical Line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background: #575757;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* BOX */
+.timeline-box {
+  padding: 20px;
+  position: relative;
+  background: #141414;
+  border-radius: 12px;
+  width: 45%;
+  margin-bottom: 40px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.1);
+  animation: fadeIn 1s ease;
+}
+
+/* Card Positions */
+.left { left: 0; }
+.right { left: 55%; }
+
+.timeline-box h3 {
+  color: #00aaff;
+  font-weight: 600;
+}
+
+/* DOTS */
+.timeline-box::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: #00aaff;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.left::before {
+  right: -10px;
+}
+
+.right::before {
+  left: -10px;
+}
+/* ---------- Testimonials Section ---------- */
+#testimonials {
+  background: #0b0b0b;
+  color: #fff;
+}
+
+#testimonials h1 {
+  background: linear-gradient(90deg, #61AFEF, #FF009D, #8CFF00);
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6));
+}
+
+#testimonials .card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#testimonials .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 40px rgba(97,175,239,0.08),
+              0 10px 40px rgba(255,0,157,0.08),
+              0 10px 40px rgba(140,255,0,0.08);
+}
+
+/* Quote Icon */
+#testimonials .fa-quote-left {
+  color: #61AFEF;
+  margin-bottom: 15px;
+}
+
+/* Name & Role */
+#testimonials h5 {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+#testimonials small {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #testimonials .col-md-4 {
+    margin-bottom: 30px;
+  }
+}
+  
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 10px;
+  }
+
+  .timeline-box {
+    width: 100%;
+    left: 0 !important;
+    margin-left: 30px;
+  }
+
+  .timeline-box::before {
+    left: -30px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Mobile Responsive */
+@media(max-width: 768px) {
+  .skills-title {
+    font-size: 40px;
+  }
+  .skill-icon i {
+    font-size: 45px;
+  }
+  .skill-card {
+    padding: 25px;
+  }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #hobbies h1 {
+    font-size: 40px;
+  }
+  .hobby-card i {
+    font-size: 55px;
+  }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-modern {
+    padding: 60px 30px;
+    margin-top: 20px;
+  }
+
+  .hero-name {
+    font-size: 38px;
+  }
+}
+
+  .contact-form .btn-send:active { transform: translateY(1px) }
+
+  /* responsive */
+  @media (max-width:880px){
+    .rgb-contact .row { flex-direction: column; text-align:center }
+    .contact-form { max-width:100%; width:100% }
+    .contact-links { justify-content:center }
+  }
   @keyframes fillBar {
     from { width: 0; }
     to { width: var(--final-width); }
@@ -222,74 +934,72 @@
 
 <div>
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg pt-4 pb-4">
+<nav class="modern-nav navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand my-name" href="#">PROFILE</a>
+      
+    <a class="navbar-brand nav-title" href="#">PROFILE</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon" style="filter: invert(80%);"></span>
+      <span class="navbar-toggler-icon" style="filter: invert(100%);"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+      <ul class="navbar-nav ms-auto nav-links">
+        <li class="nav-item"><a class="nav-link modern-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link modern-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link modern-link" href="#hobbies">Hobbies</a></li>
+        <li class="nav-item"><a class="nav-link modern-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link modern-link" href="#skills">Skills</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
-</div>
 
 <!-- Hero Section -->
 
-
- <div class="container-fluid hero_section ">
-     <div class="row name-banner">
-      <div class="col-md-7 col-lg-7 col-sm-12 name">
-        <h1>HELLO I'M</h1>
-        <h1>Shubham Pratap</h1>
-        <h5>a BCA student with a strong interest in technology and digital creativity. 
-        I enjoy learning new concepts, building practical projects, and improving my skills step by step. 
-      </h5>
-    </div>
-
-    <div class="col-md-5 col-lg-5 col-sm-12 text-center">
-        <img src="ani.webp" class="" alt="Profile">
-    </div>
-  </div>
- </div>
-  
-
-
-
-
- <div class="about-tab text-center container-fluid" style="margin-top: 200px;">
-   
-    <div class="mx-auto" style="width: 40%;">
-         <h1 style="font-size: 50px;">ABOUT ME</h1>
-    <p class="mt-5 mb-5">
-        Thanks for visiting! I enjoy building and learning new things. I'm a Shubham 
-        and have developed a strong passion for the language. Most of the time I build 
-        things for my personal use and share them on Github. I love the challenges that come
-         with the development process. When I'm not coding, I enjoy reading books, technical blog posts
-         , watching movies, or listening to music.
-    </p>
-
-
-
-
-       <button class="mybutton" >PROJECTS</button>
-       <button class="mybutton2">GET IN TOUCH</button>
-
-
-    </div>
-
+<div class="hero-modern container-fluid">
+  <div class="row align-items-center">
     
+    <div class="col-md-7 hero-text">
+      <h3 class="hero-greet">HELLO, I'M</h3>
+      <h1 class="hero-name">SHUBHAM PRATAP</h1>
+
+      <p class="hero-para">
+        a BCA student with a strong interest in technology and digital creativity. 
+        I enjoy learning new concepts, building practical projects, and improving my
+        skills step by step.
+      </p>
+    </div>
+
+    <div class="col-md-5 text-center">
+      <div class="hero-image-wrap">
+        <img src="ani.webp" class="hero-image" alt="Profile">
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
- </div>
+
+
+ <section class="about-modern container">
+  <h1 class="about-heading">ABOUT ME</h1>
+
+  <p class="about-desc">
+    Thanks for visiting! I’m Shubham, a developer who loves building clean and
+    useful digital things. I enjoy working on personal projects, exploring new tech,
+    and improving my skills. When I'm not coding, I enjoy reading, watching movies,
+    and listening to music.
+  </p>
+
+  <div class="about-links">
+    <a href="#" class="about-link">Projects</a>
+    <a href="#" class="about-link">Contact</a>
+  </div>
+</section>
+
 
 
 
@@ -352,109 +1062,201 @@
 
 
 
-<section id="hobbies" class="container py-5 text-center" style="margin-top: 200px;">
-   <h1 style="font-size: 50px;">SKILLS</h1>
-  <div class="row mt-4 g-5">
+<section id="skills" class="container py-5 text-center" style="margin-top: 200px;">
 
-    <div class="col-md-3">
-        <div class=" skill-cards skill1 text-center" style="align-items: center;">
-            <button class="btn" style="display: flex; align-items: center; gap: 10px; justify-content: center;"><i class="fa-solid fa-earth-asia "></i> HTML</button>
-         
-           
-        </div>
+  <h1 class="skills-title">SKILLS</h1>
+
+  <div class="row mt-5 g-4">
+
+    <div class="col-md-3 col-6">
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+        <h4>HTML</h4>
+      </div>
     </div>
 
-     
-    <div class="col-md-3">
-        <div class=" skill-cards skill2 text-center" style="align-items: center;">
-            <button class="btn" style="display: flex; align-items: center; gap: 10px; justify-content: center;"><i class="fa-solid fa-earth-asia "></i> CSS</button>
-         
-           
-        </div>
+    <div class="col-md-3 col-6">
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+        <h4>CSS</h4>
+      </div>
     </div>
 
-    <div class="col-md-3">
-        <div class=" skill-cards skill3 text-center" style="align-items: center;">
-            <button class="btn" style="display: flex; align-items: center; gap: 10px; justify-content: center;"><i class="fa-solid fa-earth-asia "></i> CSS</button>
-         
-           
-        </div>
+    <div class="col-md-3 col-6">
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+        <h4>C PROGRAMMING</h4>
+      </div>
     </div>
 
-    <div class="col-md-3">
-        <div class=" skill-cards skill4 text-center" style="align-items: center;">
-            <button class="btn" style="display: flex; align-items: center; gap: 10px; justify-content: center;"><i class="fa-solid fa-earth-asia "></i> CSS</button>
-         
-           
-        </div>
+    <div class="col-md-3 col-6">
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+        <h4>JAVA SCRIPT</h4>
+      </div>
     </div>
-
-   
 
   </div>
 </section>
 
+<section id="education" class="edu-section py-5">
+  <div class="container">
+    <h1 class="text-center mb-5">My Education & Journey</h1>
 
+    <div class="timeline">
 
+      <!-- School -->
+      <div class="timeline-box left">
+        <h3>📘 Schooling</h3>
+        <h5>Govt. Higher Secondary School</h5>
+        <p><strong>Class 1 to 10</strong></p>
+        <p>I completed my schooling with strong interest in computers, creativity and problem-solving.</p>
+      </div>
 
+      <!-- Senior Secondary -->
+      <div class="timeline-box right">
+        <h3>📚 Senior Secondary</h3>
+        <h5>RBSE (Science / Commerce / Arts)</h5>
+        <p><strong>Class 11–12</strong></p>
+        <p>These two years helped me understand my career direction and technical interests.</p>
+      </div>
 
+      <!-- College -->
+      <div class="timeline-box left">
+        <h3>🎓 College</h3>
+        <h5>BCA – Bachelor of Computer Applications</h5>
+        <p>Currently pursuing BCA and focusing on programming, designing & digital skills.</p>
+      </div>
 
-<!-- Skills Section -->
-<!-- <section id="skills" class="container py-5">
-  <h2>My Skills</h2>
-  <div class="mt-4">
+      <!-- Current Life -->
+      <div class="timeline-box right">
+        <h3>🚀 What I'm Doing Now</h3>
+        <ul>
+          <li>Learning HTML, CSS, JavaScript</li>
+          <li>Building practical projects</li>
+          <li>Improving UI/UX & Designing skills</li>
+          <li>Growing my YouTube channel <strong>"Men Are Brave"</strong></li>
+          <li>Developing confidence & communication</li>
+        </ul>
+      </div>
 
-    <label>HTML</label>
-    <div class="progress mb-3" style="height: 20px;">
-      <div class="progress-bar bg-info" style="--final-width:75%;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="container py-5 text-center" style="margin-top: 100px;">
+  <h1 style="font-size:50px; margin-bottom:50px;">TESTIMONIALS</h1>
+  <div class="row g-4 justify-content-center">
+
+    <!-- TESTIMONIAL CARD 1 -->
+    <div class="col-md-4">
+      <div class="testimonial-card rgb-card p-4 text-center">
+        <i class="fa-solid fa-quote-left fa-2x mb-3" style="color: #61AFEF;"></i>
+        <p>"Shubham is extremely talented and dedicated. His coding skills are top-notch, and his designs are modern and creative."</p>
+        <h5 class="mt-3">– John Doe</h5>
+        <small>Project Manager</small>
+      </div>
     </div>
 
-    <label>CSS</label>
-    <div class="progress mb-3" style="height: 20px;">
-      <div class="progress-bar bg-info" style="--final-width:80%;"></div>
+    <!-- TESTIMONIAL CARD 2 -->
+    <div class="col-md-4">
+      <div class="testimonial-card rgb-card p-4 text-center">
+        <i class="fa-solid fa-quote-left fa-2x mb-3" style="color: #FF009D;"></i>
+        <p>"Very professional and creative. Delivered the project on time and exceeded expectations."</p>
+        <h5 class="mt-3">– Jane Smith</h5>
+        <small>UI Designer</small>
+      </div>
     </div>
 
-    <label>Bootstrap</label>
-    <div class="progress mb-3" style="height: 20px;">
-      <div class="progress-bar bg-info" style="--final-width:85%;"></div>
-    </div>
-
-    <label>JavaScript</label>
-    <div class="progress mb-3" style="height: 20px;">
-      <div class="progress-bar bg-info" style="--final-width:60%;"></div>
+    <!-- TESTIMONIAL CARD 3 -->
+    <div class="col-md-4">
+      <div class="testimonial-card rgb-card p-4 text-center">
+        <i class="fa-solid fa-quote-left fa-2x mb-3" style="color: #8CFF00;"></i>
+        <p>"Great communicator and skilled developer. Loved working with him on multiple projects."</p>
+        <h5 class="mt-3">– Michael Lee</h5>
+        <small>Freelance Client</small>
+      </div>
     </div>
 
   </div>
-</section> -->
-
+</section>
 <!-- Contact Form -->
-<section id="contact" class="container py-5">
-  <h2>Contact Me</h2>
-  <div class="contact-form mt-4">
-    <form>
-      <div class="mb-3">
-        <label class="form-label">Your Name</label>
-        <input type="text" class="form-control">
+<section class="rgb-contact">
+  <div class="card">
+    <div class="row d-flex align-items-center">
+      <div class="col" style="flex:1 1 420px; min-width:260px;">
+        <h2>Get in touch</h2>
+        <p class="lead">Have a project or want to say hi? Choose one of these — I'll reply soon.</p>
+
+        <div class="contact-links" style="margin-top:10px;">
+          <a href="mailto:shubhampratap8209@gmail.com" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+          </a>
+
+          <a href="https://instagram.com/" target="_blank" rel="noopener" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="tel:8233341993" title="Call">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call</span>
+          </a>
+        </div>
       </div>
-      <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control">
+
+      <!-- small contact form -->
+      <div class="col" style="flex:0 0 360px; margin-left:auto;">
+        <div class="contact-form">
+          <form id="miniContact" onsubmit="return false;">
+            <div style="display:flex; gap:8px; margin-bottom:8px;">
+              <input class="form-control" id="miniName" type="text" placeholder="Your name" required>
+            </div>
+            <div style="display:flex; gap:8px; margin-bottom:8px;">
+              <input class="form-control" id="miniEmail" type="email" placeholder="Email" required>
+            </div>
+            <div style="display:flex; gap:8px; margin-bottom:10px;">
+              <input class="form-control" id="miniMsg" type="text" placeholder="Short message" required>
+            </div>
+            <button class="btn-send" onclick="miniSend()">Send</button>
+          </form>
+        </div>
       </div>
-      <div class="mb-3">
-        <label class="form-label">Message</label>
-        <textarea class="form-control" rows="4"></textarea>
-      </div>
-      <button class="btn btn-info w-100">Send</button>
-    </form>
+    </div>
   </div>
 </section>
 
-<footer>
-  <p>Email: shubhampratap8209@gmail.com</p>
-  <p>Contact: 8233341993</p>
-  <p>© 2025 Shubham | All Rights Reserved</p>
-</footer>
+<script>
+  function miniSend(){
+    const name = document.getElementById('miniName').value.trim();
+    const email = document.getElementById('miniEmail').value.trim();
+    const msg = document.getElementById('miniMsg').value.trim();
+    if(!name || !email || !msg){
+      alert('Please fill all fields');
+      return;
+    }
+    // demo behaviour: show a quick success message
+    const btn = event?.target || null;
+    if(btn) btn.innerText = 'Sending...';
+    setTimeout(()=>{
+      alert('Message sent (demo). Thanks, ' + name + '!');
+      if(btn) btn.innerText = 'Send';
+      document.getElementById('miniContact').reset();
+    }, 800);
+  }
+</script>
 
+<!-- Note: requires Font Awesome for icons. If not present, include:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+-->
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
